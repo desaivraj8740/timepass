@@ -1,38 +1,44 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Create and inject CSS styles
+    const style = document.createElement('style');
+    style.innerHTML = `
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('Hacker.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
 
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #000;
-      color: #fff;
-      font-family: 'Arial', sans-serif;
-      overflow: hidden;
-    }
-    .hacked-container {
-      text-align: center;
-    }
-    .hacked-message {
-      font-size: 2em;
-      margin-bottom: 20px;
-      animation: blink 1s steps(2, start) infinite;
-    }
-    @keyframes blink {
-      to {
-        visibility: hidden;
-      }
-    }
-    .hacker-image {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-    }
-    
+        #hacked-container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% {
+                opacity: 1;
+            }
+            25%, 75% {
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Alert the user
     alert("Your website is hacked!");
 });
-
-
